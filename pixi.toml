@@ -15,7 +15,7 @@ pytorch = ">=2.7.1,<3"
 torchvision = ">=0.22.0,<0.23"
 
 [feature.cpu.tasks.train-cpu]
-description = "Train a PyTorch CNN on MNIST on CPU as a check"
+description = "Train a PyTorch CNN on MNIST on CPU as a local test"
 cmd = "time python ./app/torch_MNIST.py --epochs 2"
 
 [feature.gpu.system-requirements]
