@@ -12,6 +12,11 @@ python = ">=3.13.5,<3.14"
 [feature.cpu.dependencies]
 jax = ">=0.7.0,<0.8"
 pytorch = ">=2.7.1,<3"
+torchvision = ">=0.22.0,<0.23"
+
+[feature.cpu.tasks.train-cpu]
+description = "Train a PyTorch CNN on MNIST on CPU as a check"
+cmd = "time python ./app/torch_MNIST.py --epochs 2"
 
 [feature.gpu.system-requirements]
 cuda = "12.4"
@@ -23,6 +28,14 @@ jax = ">=0.6.0,<0.7"
 jaxlib = ">=0.6.0,<0.7"
 cuda-version = "12.6.*"
 torchvision = ">=0.22.0,<0.23"
+
+[feature.gpu.tasks.check]
+description = "Check if GPU is visible to PyTorch"
+cmd = "python ./app/torch_detect_GPU.py"
+
+[feature.gpu.tasks.train]
+description = "Train a PyTorch CNN on MNIST on GPU"
+cmd = "time python ./app/torch_MNIST.py --epochs 14 --save-model"
 
 [feature.lab.dependencies]
 notebook = ">=7.4.5,<8"
