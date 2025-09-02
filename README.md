@@ -1,4 +1,4 @@
-# miapbp-pixi-demo
+# MIAPbP 2025 Pixi demo (2025-09-2)
 
 ## Setup
 
@@ -11,3 +11,9 @@ pixi run start
 ```
 
 and pick the option that matches if you want a CPU or CUDA GPU environment.
+
+To see a summary of all defined [Pixi tasks](https://pixi.sh/latest/workspace/advanced_tasks/) run
+
+```
+pixi task list
+```
