@@ -16,7 +16,8 @@ torchvision = ">=0.22.0,<0.23"
 
 [feature.cpu.tasks.train-cpu]
 description = "Train a PyTorch CNN on MNIST on CPU as a local test"
-cmd = "time python ./app/torch_MNIST.py --epochs 2"
+args = [ { "arg" = "epochs", "default" = "--epochs 2" } ]
+cmd = "time python ./app/torch_MNIST.py {{ epochs }}"
 
 [feature.gpu.system-requirements]
 cuda = "12.4"
@@ -35,7 +36,8 @@ cmd = "python ./app/torch_detect_GPU.py"
 
 [feature.gpu.tasks.train]
 description = "Train a PyTorch CNN on MNIST on GPU"
-cmd = "time python ./app/torch_MNIST.py --epochs 14 --save-model"
+args = [ { "arg" = "epochs", "default" = "--epochs 14" } ]
+cmd = "time python ./app/torch_MNIST.py {{ epochs }} --save-model"
 
 [feature.lab.dependencies]
 notebook = ">=7.4.5,<8"
