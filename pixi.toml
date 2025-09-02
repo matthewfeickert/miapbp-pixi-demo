@@ -8,16 +8,31 @@ version = "0.1.0"
 
 [dependencies]
 python = ">=3.13.5,<3.14"
+
+[feature.cpu.dependencies]
 jax = ">=0.7.0,<0.8"
+pytorch = ">=2.7.1,<3"
 
 [feature.gpu.system-requirements]
 cuda = "12.4"
 
 [feature.gpu.target.linux-64.dependencies]
-jax = ">=0.7.0,<0.8"
-pytorch-gpu = ">=2.7.1,<3"
-cuda-version = "==12.6"
 python = ">=3.13.5,<3.14"
+pytorch-gpu = ">=2.7.1,<3"
+cuda-version = "12.6.*"
+jax = ">=0.6.0,<0.7"
+jaxlib = ">=0.6.0,<0.7"
+
+[feature.lab.dependencies]
+notebook = ">=7.4.5,<8"
+jupyterlab = ">=4.4.6,<5"
+
+[feature.lab.tasks.start]
+description = "Launch Jupyter Lab"
+cmd = "jupyter lab"
 
 [environments]
+cpu = ["cpu"]
 gpu = ["gpu"]
+lab-cpu = ["cpu", "lab"]
+lab-gpu = ["gpu", "lab"]
