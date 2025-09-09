@@ -26,9 +26,8 @@ cuda = "12.4"
 python = ">=3.13.7,<3.14"
 pytorch-gpu = ">=2.7.1,<3"
 torchvision = ">=0.22.0,<0.23"
-# c.f. https://github.com/conda-forge/jaxlib-feedstock/issues/320
-jax = "==0.6.0"
-cuda-version = "12.6.*"
+jax = ">=0.7.0,<0.8"
+cuda-version = "12.9.*"
 
 [feature.gpu.tasks.check]
 description = "Check if GPU is visible to PyTorch"
