@@ -17,3 +17,8 @@ To see a summary of all defined [Pixi tasks](https://pixi.sh/latest/workspace/ad
 ```
 pixi task list
 ```
+
+## Resources
+
+* [Pixi documentation](https://pixi.sh/)
+* [Reproducible Machine Learning Workflows for Scientists, Matthew Feickert, 2025](https://carpentries-incubator.github.io/reproducible-ml-workflows/)
